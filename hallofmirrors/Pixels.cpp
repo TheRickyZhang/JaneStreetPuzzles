@@ -40,7 +40,7 @@ void PixelGroup::calculateSlope() {
     // SET slopeValues if common slope values are known to clamp floating point errors
     double slopeValues[] = {0, 0.414213, 1, 2.414213, -0.414213, -1, -2.414213};
     for(double s : slopeValues) {
-        if (slope > s - 0.15 && slope < s + 0.15) {
+        if (slope > s - 0.2 && slope < s + 0.2) {
             slope = s;
             break;
         }

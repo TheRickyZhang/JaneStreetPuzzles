@@ -83,3 +83,16 @@
 4	644	7254945568815709	CMakeFiles/hall_of_mirrors_lib.dir/Pixels.cpp.obj	398becee7366cefc
 644	750	7254945569872103	libhall_of_mirrors_lib.a	28efb112a73772c1
 750	960	7254945571918953	HallOfMirrors.exe	fb9b1a14a6b651fd
+4	1830	7254987480683850	CMakeFiles/HallOfMirrors.dir/main.cpp.obj	281cd68f40fb206c
+1831	2311	7254987485524768	HallOfMirrors.exe	fb9b1a14a6b651fd
+4	1766	7254989423135896	CMakeFiles/HallOfMirrors.dir/main.cpp.obj	281cd68f40fb206c
+1767	1951	7254989424938016	HallOfMirrors.exe	fb9b1a14a6b651fd
+5	719	7254989724853601	CMakeFiles/hall_of_mirrors_lib.dir/Pixels.cpp.obj	398becee7366cefc
+721	960	7254989727282214	libhall_of_mirrors_lib.a	28efb112a73772c1
+960	1166	7254989729273311	HallOfMirrors.exe	fb9b1a14a6b651fd
+4	1789	7254990213701569	CMakeFiles/HallOfMirrors.dir/main.cpp.obj	281cd68f40fb206c
+1791	2064	7254990216427368	HallOfMirrors.exe	fb9b1a14a6b651fd
+5	1793	7254990413289686	CMakeFiles/HallOfMirrors.dir/main.cpp.obj	281cd68f40fb206c
+1794	1962	7254990414955659	HallOfMirrors.exe	fb9b1a14a6b651fd
+4	1671	7254994561606286	CMakeFiles/HallOfMirrors.dir/main.cpp.obj	281cd68f40fb206c
+1671	1943	7254994564312467	HallOfMirrors.exe	fb9b1a14a6b651fd
