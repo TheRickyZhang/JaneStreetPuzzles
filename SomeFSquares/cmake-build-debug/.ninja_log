@@ -1,0 +1,15 @@
+# ninja log v5
+3	4113	7268010778500713	build.ninja	fd742e16494b1e32
+6	3532	7267236352433963	CMakeFiles/SomeFSquares_tests.dir/test_main.cpp.obj	92ca745c8d03f768
+17	9357	7267236410503561	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	dc4705d546ad551e
+5	1787	7267803086053537	CMakeFiles/SomeFSquares.dir/main.cpp.obj	b9a7acb12356b388
+32	2452	7267236341651396	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	cac73ed8ea1f8cc8
+1788	2239	7267803090403206	SomeFSquares.exe	b833db0d24027b01
+9358	12857	7267236445587279	lib/libgtest.a	e6ce870fb347d8d6
+10	2198	7267802890428920	CMakeFiles/SomeFSquares.dir/Pentomino.cpp.obj	7d58a98966fa0614
+12857	12937	7267236446519761	lib/libgtest_main.a	4478eeba20a1a1ba
+12938	16674	7267236483869184	SomeFSquares_tests.exe	7203dfef2d6e8a18
+12938	16674	7267236483869184	SomeFSquares_tests[1]_tests.cmake	7203dfef2d6e8a18
+0	16	0	clean	918e350ea00ea281
+12938	16674	7267236483869184	C:/Users/ricky/Projects/JaneStreet/SomeFSquares/cmake-build-debug/SomeFSquares_tests[1]_tests.cmake	7203dfef2d6e8a18
+12	2224	7267236339316974	CMakeFiles/SomeFSquares_tests.dir/Pentomino.cpp.obj	b217f7a40c6ccbf3
