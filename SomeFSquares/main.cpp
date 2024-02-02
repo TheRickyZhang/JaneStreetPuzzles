@@ -1,5 +1,8 @@
 #include "Pentomino.h"
+#include "Grid.h"
 #include <unordered_set>
+#include <chrono>
+#include <thread>
 
 /* There are a total of 20 groups of squares that must have a common sum
  * The sum of the numbers in the rows and columns is 899 + x + y, which can be reasonably bounded from 900 to 980.
@@ -9,102 +12,89 @@
  *  An 'f' of size n will have a maximum sum along n consecutive rows/diagonals of 3n^2. Thus, the maximum possible f
  *  is size 3.
  */
+int counter = 0;
 
-unordered_multiset<size_t> visitedStates;
-
-/*
-bool solvePuzzle(Grid &grid, vector<Pentomino>& pentominos) {
+void placeMaximumSizePentominos(Grid &grid, vector<Pentomino>& pentominos, int& maxPlaced, vector<Grid>& outputGrids,
+                                int& placedCount, unordered_multiset<size_t>& visitedStates) {
     size_t currentState = grid.hash();
-    if(visitedStates.find(currentState) != visitedStates.end()){
-        return false;
+    if (visitedStates.find(currentState) != visitedStates.end()) {
+        return;
     }
-    if (grid.checkSums(grid)) {
-        return true; // All sum conditions are met, puzzle is solved
+    visitedStates.insert(currentState);
+
+    if (placedCount > maxPlaced) {
+        outputGrids.clear();
+        maxPlaced = placedCount;
+        outputGrids.push_back(grid); // Save the new maximum grid
+    } else if (placedCount == maxPlaced) {
+        outputGrids.push_back(grid); // Save grid only if it matches the current maximum
     }
+
+    if (counter % 10000 == 0 && pentominos[0].scale == 1){
+        cout << counter << " Pentominos Placed" << endl;
+        grid.printBoard();
+    }
+
     for (const Pentomino& p : pentominos) {
-        for (int y = 0; y <= grid.rows - p.scale * 3; ++y) {
-            for (int x = 0; x <= grid.cols - p.scale * 3; ++x) {
+        for (int y = 0; y < grid.rows - 3 * p.scale + 1; ++y) {
+            for (int x = 0; x < grid.cols - 3 * p.scale + 1; ++x) {
                 if (grid.placePentomino(p, y, x)) {
-                    //grid.printBoard();
-                    visitedStates.insert(currentState);
-                    if(p.scale == 3){
-                        cout << "Placed size 3" << endl;
+                    counter++;
+                    if(p.scale == 1 && grid.checkSums(grid)) {
+                        outputGrids = {grid};
+                        break;
                     }
-                    if(p.scale == 2){
-                        cout << "Placed size 2" << endl;
-                    }
-                    if(visitedStates.size() % 1000 == 0){
-                        cout << visitedStates.size() << endl;
-                    }
-                    if (solvePuzzle(grid, pentominos)) {
-                        return true; // Recursive call with the next pentomino
-                    }
-                    else{
-                        grid.removePentomino(p, y, x); // Backtrack
-                        //grid.printBoard();
-                    }
+                    placedCount++;
+                    placeMaximumSizePentominos(grid, pentominos, maxPlaced, outputGrids, placedCount, visitedStates);
+                    grid.removePentomino(p, y, x);
+                    placedCount--;
                 }
             }
         }
     }
-    return false;
-}
-*/
-
-
-bool solvePuzzle(Grid &grid, vector<Pentomino>& pentominos) {
-    size_t currentState = grid.hash();
-    if(visitedStates.find(currentState) != visitedStates.end()){
-        return false;
-    }
-    if (grid.checkSums(grid)) {
-        return true;
-    }
-    for (const Pentomino& p : pentominos) {
-        vector<int> yValues = grid.findRowPlacementCoordinates(p);
-        vector<int> xValues = grid.findColPlacementCoordinates(p);
-        if(yValues.empty() || xValues.empty()) {
-            continue;
-        }
-        for(int y : yValues){
-            for(int x : xValues){
-                if (grid.placePentomino(p, y, x)) {
-                    //grid.printBoard();
-                    visitedStates.insert(currentState);
-                    if(p.scale == 3){
-                        cout << "Placed size 3" << endl;
-                    }
-                    if(visitedStates.size() % 1000 == 0){
-                        cout << visitedStates.size() << endl;
-                    }
-                    if (solvePuzzle(grid, pentominos)) {
-                        return true; // Recursive call with the next pentomino
-                    }
-                    else{
-                        grid.removePentomino(p, y, x); // Backtrack
-                        //grid.printBoard();
-                    }
-                }
-            }
-        }
-    }
-    return false;
 }
 
 
 int main() {
     Grid grid = Grid(17, 17);
-    vector<Pentomino> pentominos;
+    unordered_multiset<size_t> visitedStates;
+    vector<Pentomino> pentominos3;
+    vector<Pentomino> pentominos2;
+    vector<Pentomino> pentominos1;
+
     for (int i = f; i <= fr270; i++) {
         auto type = static_cast<PentominoTypes>(i);
-        for(int j = 3; j >= 1; j--){
-            pentominos.emplace_back(type, j);
-        }
+        pentominos3.emplace_back(type, 3);
+        pentominos2.emplace_back(type, 2);
+        pentominos1.emplace_back(type, 1);
     }
-    if(solvePuzzle(grid, pentominos)){
-        grid.printBoard();
-    } else{
-        cout << "No solution!";
+    int placedCount = 0, maxPlaced = 0;
+    vector<Grid> size3Grids;
+    placeMaximumSizePentominos(grid, pentominos3, maxPlaced, size3Grids, placedCount, visitedStates);
+    pruneGrids(size3Grids, 2);
+    for (Grid& g : size3Grids) {
+        g.printBoard();
+    }
+
+    placedCount = 0, maxPlaced = 0, visitedStates = {};
+    vector<Grid> size2Grids;
+    for (Grid& grid3 : size3Grids) {
+        placeMaximumSizePentominos(grid3, pentominos2, maxPlaced, size2Grids, placedCount, visitedStates);
+    }
+    pruneGrids(size2Grids, 1);
+    for (Grid& g : size2Grids) {
+        g.printBoard();
+    }
+
+    placedCount = 0, maxPlaced = 0, visitedStates = {};
+    vector<Grid> size1Grids;
+    for (Grid& grid2 : size2Grids) {
+        placeMaximumSizePentominos(grid2, pentominos1, maxPlaced, size1Grids, placedCount, visitedStates);
+    }
+    for (Grid& g : size1Grids) {
+        g.printBoard();
+        cout << "Placed " << counter << " Pentominoes to reach solution" << endl;
+        cout << "Solution: " << g.calculateAnswer() << " (product of sizes of all 0 filled sections)";
     }
 
     return 0;

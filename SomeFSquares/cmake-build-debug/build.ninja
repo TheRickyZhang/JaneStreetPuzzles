@@ -61,6 +61,12 @@ build CMakeFiles/SomeFSquares.dir/Pentomino.cpp.obj: CXX_COMPILER__SomeFSquares_
   OBJECT_DIR = CMakeFiles\SomeFSquares.dir
   OBJECT_FILE_DIR = CMakeFiles\SomeFSquares.dir
 
+build CMakeFiles/SomeFSquares.dir/Grid.cpp.obj: CXX_COMPILER__SomeFSquares_unscanned_Debug C$:/Users/ricky/Projects/JaneStreet/SomeFSquares/Grid.cpp || cmake_object_order_depends_target_SomeFSquares
+  DEP_FILE = CMakeFiles\SomeFSquares.dir\Grid.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\SomeFSquares.dir
+  OBJECT_FILE_DIR = CMakeFiles\SomeFSquares.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SomeFSquares
@@ -69,7 +75,7 @@ build CMakeFiles/SomeFSquares.dir/Pentomino.cpp.obj: CXX_COMPILER__SomeFSquares_
 #############################################
 # Link the executable SomeFSquares.exe
 
-build SomeFSquares.exe: CXX_EXECUTABLE_LINKER__SomeFSquares_Debug CMakeFiles/SomeFSquares.dir/main.cpp.obj CMakeFiles/SomeFSquares.dir/Pentomino.cpp.obj
+build SomeFSquares.exe: CXX_EXECUTABLE_LINKER__SomeFSquares_Debug CMakeFiles/SomeFSquares.dir/main.cpp.obj CMakeFiles/SomeFSquares.dir/Pentomino.cpp.obj CMakeFiles/SomeFSquares.dir/Grid.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SomeFSquares.dir
@@ -102,6 +108,13 @@ build CMakeFiles/SomeFSquares_tests.dir/Pentomino.cpp.obj: CXX_COMPILER__SomeFSq
   OBJECT_DIR = CMakeFiles\SomeFSquares_tests.dir
   OBJECT_FILE_DIR = CMakeFiles\SomeFSquares_tests.dir
 
+build CMakeFiles/SomeFSquares_tests.dir/Grid.cpp.obj: CXX_COMPILER__SomeFSquares_tests_unscanned_Debug C$:/Users/ricky/Projects/JaneStreet/SomeFSquares/Grid.cpp || cmake_object_order_depends_target_SomeFSquares_tests
+  DEP_FILE = CMakeFiles\SomeFSquares_tests.dir\Grid.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/Users/ricky/Projects/JaneStreet/SomeFSquares/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/ricky/Projects/JaneStreet/SomeFSquares/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles\SomeFSquares_tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\SomeFSquares_tests.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SomeFSquares_tests
@@ -110,7 +123,7 @@ build CMakeFiles/SomeFSquares_tests.dir/Pentomino.cpp.obj: CXX_COMPILER__SomeFSq
 #############################################
 # Link the executable SomeFSquares_tests.exe
 
-build SomeFSquares_tests.exe SomeFSquares_tests[1]_tests.cmake | ${cmake_ninja_workdir}SomeFSquares_tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__SomeFSquares_tests_Debug CMakeFiles/SomeFSquares_tests.dir/test_main.cpp.obj CMakeFiles/SomeFSquares_tests.dir/Pentomino.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build SomeFSquares_tests.exe SomeFSquares_tests[1]_tests.cmake | ${cmake_ninja_workdir}SomeFSquares_tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__SomeFSquares_tests_Debug CMakeFiles/SomeFSquares_tests.dir/test_main.cpp.obj CMakeFiles/SomeFSquares_tests.dir/Pentomino.cpp.obj CMakeFiles/SomeFSquares_tests.dir/Grid.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SomeFSquares_tests.dir

@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "Pentomino.h"
+#include "Grid.h"
 
 class PentominoTest : public ::testing::Test {
 protected:
@@ -220,7 +221,6 @@ TEST_F(PentominoTest, removePentominoFails){
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
     ASSERT_EQ(testGrid.grid, expectedGrid2);
-
 }
 
 

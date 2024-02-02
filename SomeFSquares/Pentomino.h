@@ -9,17 +9,23 @@
 
 using namespace std;
 
+// Contains logic for representing Pentominos and other useful structs
 
 // Eight types of pentomino orientations, with reversed (r) and rotation (degrees clockwise)
 enum PentominoTypes { f, f90, f180, f270, fr, fr90, fr180, fr270 };
 
+// Represents a scale n Pentomino with a 2D vector size 3n x 3n
 struct Pentomino {
     vector<vector<int>> shape;
     PentominoTypes type;
     int scale;
     Pentomino(PentominoTypes p, int _scale);
+    bool operator==(const Pentomino& p) const{
+        return type == p.type && scale == p.scale;
+    }
 };
 
+// Basic 2D Coordinate struct
 struct Coord {
     int x;
     int y;
@@ -33,56 +39,11 @@ struct Coord {
     }
 };
 
-ostream& operator<<(ostream& os, const Coord& coord);
-
+// Custom groups of cells as given in problem
 struct Group {
     vector<Coord> cells;
     int sum = 0;
 };
 
-struct SumInfo {
-    int index;
-    int difference;
-    bool operator<(const SumInfo& other) const {
-        return difference < other.difference;
-    }
-};
+ostream& operator<<(ostream& os, const Coord& coord);
 
-class Grid {
-public:
-    vector<vector<int>> grid;
-    vector<int> rowSums;
-    vector<int> colSums;
-    vector<int> groupSums;
-    vector<Group> groups;
-    static const int sumOfGroup = 24;
-    map<Coord, int> cellToGroupMap;
-    map<int, int> expectedRowSums;
-    map<int, int> expectedColSums;
-    priority_queue<SumInfo> rowQueue, colQueue;
-
-    int rows, cols;
-
-    Grid(int rows, int cols) : rows(rows), cols(cols), grid(rows, vector<int>(cols, 0)),
-                               rowSums(rows, 0), colSums(cols, 0), groupSums(20, 0)
-    { initializeGroups(); }
-    void printBoard();
-    size_t hash();
-    vector<int> findRowPlacementCoordinates(const Pentomino& p);
-    vector<int> findColPlacementCoordinates(const Pentomino& p);
-    void updateSumsAndQueues();
-
-    void revertToOriginalState(const vector<vector<int>>& originalArea,
-                               const vector<int>& originalRowSums,
-                               const vector<int>& originalColSums,
-                               const vector<int>& originalGroupSums,
-                               int row, int col, int affectedRows, int affectedCols);
-
-    bool placePentomino(const Pentomino &p, int row, int col);
-
-    bool removePentomino(const Pentomino &p, int row, int col);
-
-    bool checkSums(const Grid& g);
-
-    void initializeGroups();
-};

@@ -11,16 +11,18 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-add_executable(SomeFSquares main.cpp
-        Pentomino.cpp)
+add_executable(SomeFSquares
+        main.cpp
+        Pentomino.cpp
+        Grid.cpp)
 
 enable_testing()
 
-add_executable(
-        SomeFSquares_tests
+add_executable(SomeFSquares_tests
         test_main.cpp
         Pentomino.cpp
-)
+        Grid.cpp)
+
 target_link_libraries(
         SomeFSquares_tests
         gtest_main
