@@ -1,21 +1,17 @@
 # ninja log v5
 15	11198	7268235811674267	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	dc4705d546ad551e
-14	2856	7285543953761511	build.ninja	fd742e16494b1e32
+14	2856	7322716040812522	build.ninja	fd742e16494b1e32
 9	3175	7272583134390129	CMakeFiles/SomeFSquares_tests.dir/test_main.cpp.obj	92ca745c8d03f768
 24	2821	7268235728085234	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	cac73ed8ea1f8cc8
-4	1280	7272583494105692	CMakeFiles/SomeFSquares.dir/main.cpp.obj	b9a7acb12356b388
-1744	2278	7272586243327631	SomeFSquares.exe	36e0f0f420bbf77e
+0	2024	7285544917344596	CMakeFiles/SomeFSquares.dir/main.cpp.obj	b9a7acb12356b388
+2025	2797	7285544925092666	SomeFSquares.exe	36e0f0f420bbf77e
 11198	14867	7268235848542777	lib/libgtest.a	e6ce870fb347d8d6
 14867	15060	7268235850489787	lib/libgtest_main.a	4478eeba20a1a1ba
-3	1105	7272554210430706	CMakeFiles/SomeFSquares.dir/Pentomino.cpp.obj	7d58a98966fa0614
+7	1351	7285544910661912	CMakeFiles/SomeFSquares.dir/Pentomino.cpp.obj	7d58a98966fa0614
 3175	7127	7272583173884393	SomeFSquares_tests.exe	4b8b97dd2f597353
 3175	7127	7272583173884393	SomeFSquares_tests[1]_tests.cmake	4b8b97dd2f597353
 3175	7127	7272583173884393	C:/Users/ricky/Projects/JaneStreet/SomeFSquares/cmake-build-debug/SomeFSquares_tests[1]_tests.cmake	4b8b97dd2f597353
 0	16	0	clean	918e350ea00ea281
 10	1450	7272582874507825	CMakeFiles/SomeFSquares_tests.dir/Pentomino.cpp.obj	b217f7a40c6ccbf3
-4	1744	7272586237999144	CMakeFiles/SomeFSquares.dir/Grid.cpp.obj	f74a41fe5b34a08d
-24	2286	7272582882864543	CMakeFiles/SomeFSquares_tests.dir/Grid.cpp.obj	bab8d7d0a13682c1
-7	1351	7285544910661912	CMakeFiles/SomeFSquares.dir/Pentomino.cpp.obj	7d58a98966fa0614
 15	1893	7285544915973691	CMakeFiles/SomeFSquares.dir/Grid.cpp.obj	f74a41fe5b34a08d
-0	2024	7285544917344596	CMakeFiles/SomeFSquares.dir/main.cpp.obj	b9a7acb12356b388
-2025	2797	7285544925092666	SomeFSquares.exe	36e0f0f420bbf77e
+24	2286	7272582882864543	CMakeFiles/SomeFSquares_tests.dir/Grid.cpp.obj	bab8d7d0a13682c1
