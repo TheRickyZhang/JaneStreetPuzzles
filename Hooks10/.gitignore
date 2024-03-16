@@ -1,0 +1,14 @@
+cmake-build-*/
+
+build/
+Release/
+Debug/
+
+*.o
+*.a
+*.so
+*.exe
+*.dll
+
+.idea/
+*.iml

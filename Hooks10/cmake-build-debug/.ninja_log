@@ -1,0 +1,18 @@
+# ninja log v5
+83	4451	7321620541738350	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	4263e820f3b438c7
+8	5468	7322752360948751	CMakeFiles/Hooks10_tests.dir/test_main.cpp.obj	82dde73da170e93b
+3628	4250	7322735721262811	Hooks10.exe	ba1e9d071c77baa3
+19	2342	7322715241499364	CMakeFiles/Hooks10.dir/main.cpp.obj	aef2ff2f04411b62
+10	3627	7322735715057579	CMakeFiles/Hooks10.dir/Grid.cpp.obj	3645c135d97d5777
+15061	15137	7321620648645182	lib/libgmock_main.a	118ea87d0bc6c419
+19	4253	7322752348837267	CMakeFiles/Hooks10_tests.dir/Grid.cpp.obj	37518273e8561d35
+125	2512	7321620522372441	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	59fad52166b8a3ec
+101	3143	7321620528703681	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	9c4c12ddb539fb1c
+112	10733	7321620604380694	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	d1611bced6464771
+5468	11823	7322752424537598	Hooks10_tests[1]_tests.cmake	3442b42a7dd79258
+10737	14611	7321620643356807	lib/libgtest.a	e6ce870fb347d8d6
+14617	14699	7321620644255057	lib/libgtest_main.a	4478eeba20a1a1ba
+14611	15061	7321620647857020	lib/libgmock.a	c2eee87daa2e9533
+5468	11823	7322752424537598	Hooks10_tests.exe	3442b42a7dd79258
+5468	11823	7322752424537598	C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug/Hooks10_tests[1]_tests.cmake	3442b42a7dd79258
+2	3060	7322752702241781	build.ninja	eaaa645d094e0983

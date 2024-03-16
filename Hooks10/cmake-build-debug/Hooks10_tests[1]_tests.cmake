@@ -1,0 +1,7 @@
+add_test([=[HookTest.CorrectHookShapeAndOrientation]=]  C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug/Hooks10_tests.exe [==[--gtest_filter=HookTest.CorrectHookShapeAndOrientation]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[HookTest.CorrectHookShapeAndOrientation]=]  PROPERTIES WORKING_DIRECTORY C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[HookTest.GenerateHooksCorrectly]=]  C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug/Hooks10_tests.exe [==[--gtest_filter=HookTest.GenerateHooksCorrectly]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[HookTest.GenerateHooksCorrectly]=]  PROPERTIES WORKING_DIRECTORY C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[HookTest.CheckPlaceHook1]=]  C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug/Hooks10_tests.exe [==[--gtest_filter=HookTest.CheckPlaceHook1]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[HookTest.CheckPlaceHook1]=]  PROPERTIES WORKING_DIRECTORY C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  Hooks10_tests_TESTS HookTest.CorrectHookShapeAndOrientation HookTest.GenerateHooksCorrectly HookTest.CheckPlaceHook1)
