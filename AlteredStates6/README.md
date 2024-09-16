@@ -1,1 +1,0 @@
-This project uses Deep Q-Networks (DQN) to optimize the placement of U.S. state names in a 5x5 grid for Jane Street's June 2024 puzzle - https://www.janestreet.com/puzzles/archive/
