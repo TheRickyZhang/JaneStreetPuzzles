@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/ricky/Projects/JaneStreet/NumberCross4/cmake-build-debug/Number_Cross_4_tests[1]_tests.cmake")
+  include("C:/Users/ricky/Projects/JaneStreet/NumberCross4/cmake-build-debug/Number_Cross_4_tests[1]_tests.cmake")
+else()
+  add_test(Number_Cross_4_tests_NOT_BUILT Number_Cross_4_tests_NOT_BUILT)
+endif()

@@ -1,0 +1,49 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:228 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: Emscripten - 1 - x86
+      The host system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:66 (find_package)"
+      - "build/_deps/googletest-src/googletest/CMakeLists.txt:83 (config_compiler_and_linker)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/ricky/Projects/JaneStreet/SomeFSquares/build/CMakeFiles/CMakeScratch/TryCompile-p0q5ug"
+      binary: "C:/Users/ricky/Projects/JaneStreet/SomeFSquares/build/CMakeFiles/CMakeScratch/TryCompile-p0q5ug"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Libraries/emsdk/upstream/emscripten/cmake/Modules;C:/Libraries/emsdk/upstream/emscripten/cmake/Modules;C:/Libraries/emsdk/upstream/emscripten/cmake/Modules;C:/Libraries/emsdk/upstream/emscripten/cmake/Modules;C:/Libraries/emsdk/upstream/emscripten/cmake/Modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/ricky/Projects/JaneStreet/SomeFSquares/build/CMakeFiles/CMakeScratch/TryCompile-p0q5ug'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_6a5d8/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_6a5d8.dir\\build.make CMakeFiles/cmTC_6a5d8.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/ricky/Projects/JaneStreet/SomeFSquares/build/CMakeFiles/CMakeScratch/TryCompile-p0q5ug'
+        Building C object CMakeFiles/cmTC_6a5d8.dir/src.c.o
+        C:\\Libraries\\emsdk\\upstream\\emscripten\\emcc.bat -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_6a5d8.dir/src.c.o -MF CMakeFiles\\cmTC_6a5d8.dir\\src.c.o.d -o CMakeFiles\\cmTC_6a5d8.dir\\src.c.o -c C:\\Users\\ricky\\Projects\\JaneStreet\\SomeFSquares\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p0q5ug\\src.c
+        Linking C executable cmTC_6a5d8.js
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_6a5d8.dir\\link.txt --verbose=1
+        C:\\Libraries\\emsdk\\upstream\\emscripten\\emcc.bat @CMakeFiles\\cmTC_6a5d8.dir\\objects1.rsp -o cmTC_6a5d8.js 
+        mingw32-make[1]: Leaving directory 'C:/Users/ricky/Projects/JaneStreet/SomeFSquares/build/CMakeFiles/CMakeScratch/TryCompile-p0q5ug'
+        
+      exitCode: 0
+...

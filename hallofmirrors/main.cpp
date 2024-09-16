@@ -80,16 +80,77 @@ int main() {
         }
     }
 
-    //SET initial light line to be drawn
-    Line line = Line(-1, Coord(1164, 794));
+    // Ask user if they want to use default values or custom values
+    std::string choice;
+    std::cout << "Do you want to use default values? (yes/no): ";
+    std::cin >> choice;
 
-    //SET color of line
-    Pixel lineColor(0, 0, 255, -1, -1);
+    int lineStartX, lineStartY;
+    int lineColorR, lineColorG, lineColorB;
+    MovementState initialMovingRight, initialMovingUp;
 
-    //SET state of line: initial position and movement direction
-    MovementState initialMovingRight = MovementState::False;
-    MovementState initialMovingUp = MovementState::True;
-    LineDrawingState state = LineDrawingState(1164, 794, initialMovingRight, initialMovingUp);
+    if (choice == "yes" || choice == "Yes" || choice == "Y" || choice == "y") {
+        // Default values
+        lineStartX = 1164;
+        lineStartY = 794;
+        lineColorR = 0;
+        lineColorG = 0;
+        lineColorB = 255;
+        initialMovingRight = MovementState::False;
+        initialMovingUp = MovementState::True;
+    } else {
+        // Custom values
+
+        // Get user input for initial line position
+        std::cout << "Enter initial line start position of x, y (two numerical inputs between 0 and image dimensions)";
+        if (!(std::cin >> lineStartX >> lineStartY)) {
+            std::cerr << "Invalid input. Using default values (1164, 794)." << std::endl;
+            lineStartX = 1164;
+            lineStartY = 794;
+        }
+
+        // Get user input for line color
+        std::cout << "Enter line color in R, G, B (three numerical inputs between 0 and 255)";
+        if (!(std::cin >> lineColorR >> lineColorG >> lineColorB)) {
+            std::cerr << "Invalid input. Using default values (0, 0, 255)." << std::endl;
+            lineColorR = 0;
+            lineColorG = 0;
+            lineColorB = 255;
+        }
+
+        // Get user input for initial movement state
+        std::cout << "Is the line initially moving right? (yes/no): ";
+        std::cin >> choice;
+        if (choice == "yes" || choice == "Yes" || choice == "Y" || choice == "y") {
+            initialMovingRight = MovementState::True;
+        } else if (choice == "no" || choice == "No" || choice == "N" || choice == "n") {
+            initialMovingRight = MovementState::False;
+        } else {
+            std::cerr << "Invalid input. Using default value (False)." << std::endl;
+            initialMovingRight = MovementState::False;
+        }
+
+        std::cout << "Is the line initially moving up? (yes/no): ";
+        std::cin >> choice;
+        if (choice == "yes" || choice == "Yes" || choice == "Y" || choice == "y") {
+            initialMovingUp = MovementState::True;
+        } else if (choice == "no" || choice == "No" || choice == "N" || choice == "n") {
+            initialMovingUp = MovementState::False;
+        } else {
+            std::cerr << "Invalid input. Using default value (True)." << std::endl;
+            initialMovingUp = MovementState::True;
+        }
+    }
+
+    int slope = initialMovingUp == initialMovingRight ? 1 : -1;
+    // Set initial light line to be drawn
+    Line line = Line(slope, Coord(lineStartX, lineStartY));
+
+    // Set color of line
+    Pixel lineColor(lineColorR, lineColorG, lineColorB, -1, -1);
+
+    // Set state of line: initial position and movement direction
+    LineDrawingState state = LineDrawingState(lineStartX, lineStartY, initialMovingRight, initialMovingUp);
 
     //SET SFML window dimensions
     sf::RenderWindow window(sf::VideoMode(1571, 1607), "Image Display");
@@ -104,6 +165,7 @@ int main() {
     texture.loadFromImage(image);
     sprite.setTexture(texture);
     sf::Image sfmlImage = convertPixelData(pixelData);
+    std::cout << "Progam running in window" << std::endl;
 
     // Main loop for window display and interaction
     sf::Clock clock;
@@ -127,7 +189,7 @@ int main() {
         }
 
         //SET time between line updates in milliseconds
-        if (state.isDrawing && clock.getElapsedTime().asMilliseconds() >= 2) {
+        if (state.isDrawing && clock.getElapsedTime().asMilliseconds() >= 1) {
             drawLineAndDetectCollision(pixelData, line, lineColor, groups, state);
             // Live window drawing of image updating: comment out for optimized performance /*
             sfmlImage = convertPixelData(pixelData);

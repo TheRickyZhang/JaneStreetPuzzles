@@ -285,12 +285,12 @@ void Grid::printBoard() {
         for (int x = 0; x < board[y].size(); ++x) {
             if (orthogonalSums.find(Coord(y, x)) != orthogonalSums.end()) {
                 if (orthogonalSums[Coord(y, x)] % 2 == 0) {
-                    temp += "\" ";
+                    temp += "\"  ";
                 } else {
-                    temp += "' ";
+                    temp += "'  ";
                 }
             } else {
-                temp += to_string(board[y][x]) + " ";
+                temp += to_string(board[y][x]) + "  ";
             }
         }
         temp += "\n";

@@ -1,0 +1,3 @@
+ConditionTests.CheckRow1 4 0
+---
+ConditionTests.CheckRow1

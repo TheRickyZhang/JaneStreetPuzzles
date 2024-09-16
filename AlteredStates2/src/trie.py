@@ -7,6 +7,7 @@ class Trie:
     def __init__(self):
         self.root = TrieNode()
 
+    # Insert a word into the trie
     def insert(self, word):
         node = self.root
         for char in word:
@@ -15,6 +16,7 @@ class Trie:
             node = node.children[char]
         node.is_end_of_word = True
 
+    # Use changed as a flag
     def search_with_one_letter_alteration(self, word):
         def dfs(node, pos, changed):
             if pos == len(word):
