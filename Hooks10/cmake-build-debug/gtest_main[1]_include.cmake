@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug/gtest_main[1]_tests.cmake")
-  include("C:/Users/ricky/Projects/JaneStreet/Hooks10/cmake-build-debug/gtest_main[1]_tests.cmake")
-else()
-  add_test(gtest_main_NOT_BUILT gtest_main_NOT_BUILT)
-endif()
