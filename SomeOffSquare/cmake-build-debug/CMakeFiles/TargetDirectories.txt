@@ -1,3 +1,0 @@
-C:/Users/ricky/Projects/JaneStreet/SomeOffSquare/cmake-build-debug/CMakeFiles/SomeOffSquare.dir
-C:/Users/ricky/Projects/JaneStreet/SomeOffSquare/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/ricky/Projects/JaneStreet/SomeOffSquare/cmake-build-debug/CMakeFiles/rebuild_cache.dir

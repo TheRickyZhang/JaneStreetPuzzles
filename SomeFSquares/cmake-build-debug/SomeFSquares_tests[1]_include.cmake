@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/ricky/Projects/JaneStreet/SomeFSquares/cmake-build-debug/SomeFSquares_tests[1]_tests.cmake")
-  include("C:/Users/ricky/Projects/JaneStreet/SomeFSquares/cmake-build-debug/SomeFSquares_tests[1]_tests.cmake")
-else()
-  add_test(SomeFSquares_tests_NOT_BUILT SomeFSquares_tests_NOT_BUILT)
-endif()

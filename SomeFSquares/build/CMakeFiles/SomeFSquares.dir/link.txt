@@ -1,1 +1,0 @@
-C:\Libraries\emsdk\upstream\emscripten\em++.bat @CMakeFiles\SomeFSquares.dir\objects1.rsp -o SomeFSquares.js 

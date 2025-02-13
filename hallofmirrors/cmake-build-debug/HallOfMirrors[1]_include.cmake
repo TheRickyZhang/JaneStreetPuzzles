@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/ricky/Projects/JaneStreet/HallOfMirrors/cmake-build-debug/HallOfMirrors[1]_tests.cmake")
-  include("C:/Users/ricky/Projects/JaneStreet/HallOfMirrors/cmake-build-debug/HallOfMirrors[1]_tests.cmake")
-else()
-  add_test(HallOfMirrors_NOT_BUILT HallOfMirrors_NOT_BUILT)
-endif()
